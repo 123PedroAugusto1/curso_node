@@ -1,6 +1,4 @@
 
-
-
 module.exports =function(aplication){
     aplication.get('/noticias', function(req, res){
         var conn = aplication.config.dbConnection();
