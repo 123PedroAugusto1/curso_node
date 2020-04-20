@@ -1,12 +1,13 @@
 
 module.exports =function(aplication){
     aplication.get('/noticias', function(req, res){
+        //Variável de conexão com o banco
         var conn = aplication.config.dbConnection();
-        var noticiaModel = aplication.app.models.noticiaModel;
+       
+        var noticiaModel = new aplication.app.models.NoticiasDAO(conn);
         
-        noticiaModel.getNoticias(conn,function(error, result){
+        noticiaModel.getNoticias(function(error, result){
             res.render('noticias/noticias',{noticias : result}); 
-        })       
-    
+        })          
     });
 }

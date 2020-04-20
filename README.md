@@ -1,4 +1,4 @@
-# Portal de noticias
-Projeto de portal de noticias
+# News portal
+Project news portal
 
-Este projeto está sendo desenvolvido utilizando a Node js e MySql para o armazenamento de dados.
+This project is being developed using Node js and MySql for data storage.
