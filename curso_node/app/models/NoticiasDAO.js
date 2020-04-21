@@ -14,7 +14,7 @@ NoticiasDAO.prototype.getNoticia = function(id_noticia, callback )
 //Função responsável pela inserção dos dados no banco 
 NoticiasDAO.prototype.insertNoticia = function(params, callback )
 {
-  var sql = "INSERT INTO noticias (titulo, noticia) VALUES('"+params['titulo']+ "', '"+params['noticias']+"')";
+  var sql = "INSERT INTO noticias (titulo, noticia) VALUES('"+params['titulo']+ "', '"+params['noticia']+"')";
   this._conn.query( sql ,callback);   
 }
 
