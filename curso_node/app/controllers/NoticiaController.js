@@ -4,11 +4,17 @@ function NoticiaController(aplication){
 }
 
 NoticiaController.prototype.index = function(req,res){
-    res.render("home/index");
+    var conn = this._aplication.config.dbConnection();
+    var noticiaModel = new this._aplication.app.models.NoticiasDAO(conn);
+    
+    noticiaModel.getUltimasNoticias(function(error, result){
+        res.render('home/index',{noticias : result}); 
+    });
+    
 }
 
 NoticiaController.prototype.formulario_noticia = function(req,res){
-    res.render('admin/form_add_noticia',{validacao: false,noticia: {}});
+    res.render('admin/form_add_noticia',{validacao: 0,noticia: {}});
 }
 
 NoticiaController.prototype.listar_todos = function(req,res){
@@ -23,8 +29,8 @@ NoticiaController.prototype.listar_todos = function(req,res){
 
 NoticiaController.prototype.buscar_noticia = function(req,res){
     //Parametro de busca
-    var id_noticia = req.params['id'];
-        
+    var id_noticia =1;
+    //var id_noticia = req.params['id'];
     //Variável de conexão com o banco
     var conn = this._aplication.config.dbConnection();
     
@@ -62,18 +68,6 @@ NoticiaController.prototype.validaDados = function(req){
         res.redirect('/noticias');
     });
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = function(){
     return NoticiaController;
