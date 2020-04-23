@@ -35,26 +35,24 @@
 
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/">HOME</a></li>
+						<li><a href="index">HOME</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 
-
 	    <div class="container">
-			
 			<% if(noticias.length > 0){
 				for(var i= 1;i < noticias.length; i++) {%>
 	    		     <div class="row">
 				     	<div class="col-md-12">
 				     		<div class="noticia_wrapper">
 				     			<span class="noticia_autor">Por <%=noticias[i].autor%></span>
-				     			<a href="noticia.html" class="noticia_titulo">Por <%=noticias[i].titulo%></a>
-				     			<span class="noticia_data">Por <%=noticias[i].data_noticia%></span>
+				     			<a href="noticia?id=<%=noticias[i].id_noticia%>" class="noticia_titulo"><%=noticias[i].titulo%></a>
+				     			<span class="noticia_data"><%=noticias[i].data_noticia%></span>
 				     			<br />
 				     			<p class="noticia_resumo">
-									<%=noticias[i].data_noticia%>
+									<%=noticias[i].resumo%>
 				     			</p>
 				     		</div>
 				     	</div>

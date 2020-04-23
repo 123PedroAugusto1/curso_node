@@ -27,10 +27,8 @@ NoticiaController.prototype.listar_todos = function(req,res){
      })          
 }
 
-NoticiaController.prototype.buscar_noticia = function(req,res){
+NoticiaController.prototype.buscar_noticia = function(id_noticia, req, res){
     //Parametro de busca
-    var id_noticia =1;
-    //var id_noticia = req.params['id'];
     //Variável de conexão com o banco
     var conn = this._aplication.config.dbConnection();
     

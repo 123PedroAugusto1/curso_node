@@ -8,6 +8,8 @@ module.exports =function(aplication){
    
     aplication.get('/noticia', function(req, res){
         var noticiaController = new aplication.app.controllers.NoticiaController(aplication);
-        noticiaController.buscar_noticia(req, res);
+        id_noticia = req.query;
+        
+        noticiaController.buscar_noticia(id_noticia,req, res);
     });
 }

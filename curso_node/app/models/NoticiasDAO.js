@@ -8,7 +8,7 @@ NoticiasDAO.prototype.getNoticias = function(callback)
 }
 NoticiasDAO.prototype.getNoticia = function(id_noticia, callback )
 {
-  var sql = 'SELECT * FROM noticias WHERE id_noticia = '+ id_noticia;
+  var sql = 'SELECT * FROM noticias WHERE id_noticia = '+ id_noticia['id'];
   this._conn.query( sql ,callback);   
 }
 //Função responsável por pegar as 5 ultimas notícias cadastradas
